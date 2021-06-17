@@ -6,15 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cost_of_service"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:hint="@string/cost_of_service"
-        android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cost_of_service_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <TextView
         android:id="@+id/ques"
@@ -52,15 +63,15 @@
             android:text="@string/okay_10" />
     </RadioGroup>
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_of"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/round_off_tip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/RadioGrp"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        android:checked="true"
+        android:text="@string/round_off_tip"/>
 
     <Button
         android:id="@+id/calculate_button"
